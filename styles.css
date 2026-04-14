@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #050505;
+  color: #e5e5e5;
+}
+.app {
+  display: flex;
+  height: 95vh;
+}
+
+/* Sidebar */
+.sidebar {
+  min-width: 260px;
+  background: #0f0f0f;
+  border-right: 1px solid rgba(255,255,255,0.1);
+
+}
+.logo {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 20px;
+  background: linear-gradient(180deg, rgba(0,150,255,0.08), transparent);
+  text-align: center;
+  height:250px;
+}
+.logo h1 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #4fc3ff;
+}
+.logo p {
+  margin: 6px 0 0;
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #aaa;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+nav a:hover {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+nav a.active {
+  background: rgba(0, 150, 255, 0.2);
+  color: #4fc3ff;
+}
+
+/* Main */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+.map-title {
+  margin-bottom: 20px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Map */
+.map-container {
+  position: relative;
+  border: 1px ridge rgba(255,255,255,0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgb(20 20 20);
+}
+.map-container img {
+  display: block;
+  opacity: 0.95;
+}
+
+/* Pins */
+.pin {
+    position: absolute;
+    transform: translate(-50%, -40%);
+    transition: all 0.2s;
+    pointer-events: auto;
+	width: 40px;
+    height: 40px;
+}
+.pin:hover {
+  z-index: 10; 
+}
+.pin img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+.pin:hover img {
+  transform: scale(1.25);
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 120%; /* puts it above */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.9);
+  padding: 6px 10px;
+  font-size: 11px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+.pin:hover .tooltip {
+  opacity: 1;
+}
+
+.footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  color: #777;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  background: #0a0a0a;
+}
+.footer p {
+  margin: 0;
+  letter-spacing: 0.05em;
+}
